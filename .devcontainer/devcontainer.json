@@ -1,13 +1,37 @@
 {
-    "name": "melodic desktop-full",
-    "dockerFile": "Dockerfile",
-    "runArgs": [
-      "--privileged",
-      "--network=host"
-    ],
-    "workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename},type=bind",
-    "workspaceFolder": "/${localWorkspaceFolderBasename}",
-    "mounts": [
-      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history,target=/home/vscode/.bash_history,type=bind"
-    ]
-  }
+	"name": "melodic desktop-full",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "livox-camera",
+	"workspaceFolder": "/workspace",
+	"runArgs": [
+		"--runtime=nvidia"
+	],
+	"settings": {
+		"terminal.integrated.automationShell.linux": "/bin/bash",
+		"editor.formatOnSave": true,
+		"python.formatting.provider": "black",
+		"python.formatting.blackPath": "/usr/local/bin/black",
+	},
+	"extensions": [
+		"ms-azuretools.vscode-docker",
+		"eamodio.gitlens",
+		"streetsidesoftware.code-spell-checker",
+		"oderwat.indent-rainbow",
+		"ms-vsliveshare.vsliveshare",
+		"pkief.material-icon-theme",
+		"uloco.theme-bluloco-dark",
+		"ms-python.python",
+		"alefragnani.numbered-bookmarks",
+		"dbaeumer.vscode-eslint",
+		"2gua.rainbow-brackets",
+		"ajshort.msg",
+		"njpwerner.autodocstring",
+		"twxs.cmake",
+		"tyriar.sort-lines",
+		"ms-python.vscode-pylance",
+		"shinotatwu-ds.file-tree-generator",
+		"janisdd.vscode-edit-csv",
+		"znck.grammarly",
+		"timkmecl.codegpt3"
+	],
+}

@@ -1,5 +1,5 @@
 services:
-  balena-cli:
+  livox-camera:
     build:
       context: ../
       dockerfile: .devcontainer/Dockerfile
@@ -22,6 +22,7 @@ services:
       - NVIDIA_DRIVER_CAPABILITIES=all
       - NVIDIA_VISIBLE_DEVICES=all
       - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
+      - LIBGL_ALWAYS_INDIRECT=1
     volumes:
       - ..:/workspace
 
@@ -36,6 +37,8 @@ services:
 
       # Enable creating/reading inside docker new devices
       - /dev:/dev
+
+      - /run/user/1000/gdm/Xauthority:/run/user/1000/gdm/Xauthority
 
     # Add devices to be share in container
     devices:
