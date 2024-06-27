@@ -1,0 +1,3 @@
+[submodule "livox_camera_calib"]
+	path = ros/src/livox_camera_calib
+	url = https://github.com/hku-mars/livox_camera_calib.git
